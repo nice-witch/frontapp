@@ -1,13 +1,21 @@
 <template>
-  <div>
+  <div class="text-gray-400">
     <UContainer>
-      <IconsBlock :icons="icons" class-name-wrapper="flex gap-2"/>
+      <IconsBlock :icons="icons" class-name-wrapper="flex gap-2" class="mb-6"/>
+      <BasicInfo
+          :name="resumeData?.name"
+          :photo="resumeData?.photo"
+          :phone="resumeData?.phone"
+          :email="resumeData?.email"
+          :response-date="resumeData?.date"
+      />
     </UContainer>
   </div>
 </template>
 
 <script setup lang="ts">
 import IconsBlock from "~/components/resume/IconsBlock.vue";
+import BasicInfo from "~/components/resume/BasicInfo.vue";
 
 interface Resume {
   id: number;
@@ -36,7 +44,6 @@ const icons = [
   'mdi:file-send',
   'weui:like-outlined',
 ]
-// console.log(resumeData.value);
 
 onMounted(async () => {
   try {
@@ -47,6 +54,8 @@ onMounted(async () => {
 
     const data = await response.json();
     resumeData.value = data || {};
+    console.log(resumeData.value);
+
   } catch (error) {
     console.error('Error fetching resume');
     error.value = 'Failed to load resume data';
