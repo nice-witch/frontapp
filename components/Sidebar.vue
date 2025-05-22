@@ -16,7 +16,7 @@
       <div class="flex-1 overflow-y-auto ">
         <UNavigationMenu 
           orientation="vertical" 
-          class="px-2"
+          :class="`px-2 ${isCollapsed && 'items-center'}`"
           :items="navLinks" 
           :collapsed="isCollapsed"           
           :ui="{
