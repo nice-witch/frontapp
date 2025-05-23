@@ -1,5 +1,5 @@
 <template>
-  <div :class="classNameWrapper">
+  <div class="flex gap-2 cursor-pointer">
     <SquareIcons
         v-for="icon in icons"
         :key="icon"
@@ -13,10 +13,5 @@ import SquareIcons from "~/components/ui/Square-icons.vue";
 
 const props = defineProps<{
   icons: string[];
-  classNameWrapper?: string,
 }>();
 </script>
-
-<style scoped>
-
-</style>
