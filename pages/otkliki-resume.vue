@@ -10,7 +10,8 @@
           :response-date="resumeData?.date"
       />
       <DoingBlock class="mb-6"/>
-      <StatusBlock />
+      <StatusBlock class="mb-6"/>
+      <DescriptionBlock :description="resumeData?.description" :birth-date="resumeData?.birth_date" />
     </UContainer>
   </div>
 </template>
@@ -20,6 +21,7 @@ import IconsBlock from "~/components/resume/IconsBlock.vue";
 import BasicInfo from "~/components/resume/BasicInfo.vue";
 import DoingBlock from "~/components/resume/DoingBlock.vue";
 import StatusBlock from "~/components/resume/StatusBlock.vue";
+import DescriptionBlock from "~/components/resume/DescriptionBlock.vue";
 
 interface Resume {
   id: number;
