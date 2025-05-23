@@ -9,6 +9,7 @@
           :email="resumeData?.email"
           :response-date="resumeData?.date"
       />
+      <DoingBlock />
     </UContainer>
   </div>
 </template>
@@ -16,6 +17,7 @@
 <script setup lang="ts">
 import IconsBlock from "~/components/resume/IconsBlock.vue";
 import BasicInfo from "~/components/resume/BasicInfo.vue";
+import DoingBlock from "~/components/resume/DoingBlock.vue";
 
 interface Resume {
   id: number;
@@ -54,7 +56,7 @@ onMounted(async () => {
 
     const data = await response.json();
     resumeData.value = data || {};
-    console.log(resumeData.value);
+    // console.log(resumeData.value);
 
   } catch (error) {
     console.error('Error fetching resume');
