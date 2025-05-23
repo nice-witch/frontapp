@@ -1,57 +1,16 @@
 <template>
-  <div class="text-gray-400">
+  <div class="text-gray-500 dark:text-gray-400">
     <UContainer>
-      <IconsBlock :icons="icons" class-name-wrapper="flex gap-2" class="mb-6"/>
-      <BasicInfo
-          :name="resumeData?.name"
-          :photo="resumeData?.photo"
-          :phone="resumeData?.phone"
-          :email="resumeData?.email"
-          :response-date="resumeData?.date"
-      />
-      <DoingBlock class="mb-6"/>
-      <StatusBlock class="mb-6"/>
-      <DescriptionBlock :description="resumeData?.description" :birth-date="resumeData?.birth_date" />
-      <AdditionalInformation />
+      <Resume :resume-data="resumeData"/>
     </UContainer>
   </div>
 </template>
 
 <script setup lang="ts">
-import IconsBlock from "~/components/resume/IconsBlock.vue";
-import BasicInfo from "~/components/resume/BasicInfo.vue";
-import DoingBlock from "~/components/resume/DoingBlock.vue";
-import StatusBlock from "~/components/resume/StatusBlock.vue";
-import DescriptionBlock from "~/components/resume/DescriptionBlock.vue";
-import AdditionalInformation from "~/components/resume/AdditionalInformation.vue";
-
-interface Resume {
-  id: number;
-  name: string;
-  description: string;
-  date: string;
-  status: string;
-  portfolios?: object | null;
-  town: string;
-  phone: string;
-  age?: number;
-  birth_date: string;
-  email: string;
-  listing_id: number;
-  photo?: string;
-}
+import type {Resume} from '~/types/Resume'
 
 const RESUME_LINK = 'https://dev.jobcart.ru/wp-json/test/v2/app';
 const resumeData = ref<Resume>();
-const icons = [
-  'material-symbols:print-rounded',
-  'tabler:file-type-pdf',
-  'tabler:file-type-docx',
-  'fa6-solid:file-signature',
-  'streamline:interface-delete-bin-2-remove-delete-empty-bin-trash-garbage',
-  'mdi:file-send',
-  'weui:like-outlined',
-]
 
 onMounted(async () => {
   try {
