@@ -80,7 +80,6 @@ const navLinks = computed(() => {
   }
   
   return menu.value.map(item => {
-    console.log(isCollapsed.value);
     return {
       label: item.post_title,
       icon: item.icon,
