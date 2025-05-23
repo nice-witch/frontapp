@@ -7,6 +7,7 @@
         :phone="resumeData?.phone"
         :email="resumeData?.email"
         :response-date="resumeData?.date"
+        :status="resumeData?.status"
     />
     <DoingBlock class="mb-6"/>
     <StatusBlock class="mb-6"/>
