@@ -1,9 +1,9 @@
 <template>
-  <div :class="`w-[120px] relative mr-[20px] flex justify-center items-center ${chipStatus.done ? 'bg-gray-400' : 'bg-white'}`">
+  <div :class="`w-[120px] relative mr-[20px] flex justify-center items-center ${chipStatus.done ? 'bg-gray-400' : 'bg-gray-200 dark:bg-white'}`">
     <p class="text-sm text-center text-black">
       {{chipStatus.label}}
     </p>
-    <div class="arrow w-[20px] h-full absolute"></div>
+    <div class="arrow w-[20px] h-full absolute border-l-[17px] border-gray-200 dark:border-white"></div>
   </div>
 </template>
 
@@ -21,7 +21,6 @@ const props = defineProps<{
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  border-left: 17px solid #ffffff;
   right: -17px;
 }
 </style>
