@@ -1,18 +1,14 @@
 <template>
-  <div :class="`chip w-[140px] p-2 text-wrap text-center ${chip.active ? 'text-cyan-400 cursor-pointer' : 'text-cyan-700'} ${chip.done && 'bg-green-600 text-white'}`">
+  <div :class="`chip w-[140px] p-2 text-wrap text-center ${chip.active ? 'text-cyan-600 cursor-pointer' : 'bg-gray-100 text-gray-400 dark:text-cyan-700 dark:bg-transparent'} ${chip.done && 'bg-green-600 text-white'}`">
     {{chip.done ? chip.labelDone : chip.label}}
   </div>
 </template>
 
 <script setup lang="ts">
-interface Chip {
-  label: string,
-  labelDone: string,
-  done: boolean,
-  active: boolean,
-}
+import type {ChipGreen} from '~/types/Resume';
+
 const props = defineProps<{
-  chip: Chip;
+  chip: ChipGreen;
 }>();
 </script>
 
