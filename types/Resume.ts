@@ -26,3 +26,10 @@ export interface Resume {
     listing_id: number;
     photo?: string;
 }
+
+export interface ChipGreen {
+    label: string,
+    labelDone: string,
+    done: boolean,
+    active: boolean,
+}
