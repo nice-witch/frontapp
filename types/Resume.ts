@@ -33,3 +33,8 @@ export interface ChipGreen {
     done: boolean,
     active: boolean,
 }
+
+export interface ChipStatus {
+    label: string;
+    done: boolean;
+}

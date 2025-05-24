@@ -8,10 +8,8 @@
 </template>
 
 <script setup lang="ts">
-interface ChipStatus {
-  label: string;
-  done: boolean;
-}
+import type {ChipStatus} from "~/types/Resume";
+
 const props = defineProps<{
   chipStatus: ChipStatus;
 }>();
